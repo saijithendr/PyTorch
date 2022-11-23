@@ -10,9 +10,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # CIFAR-10 60000, 32x32 color images in 10 classes, with 6000 images per class
 
-batch_size = 100
+batch_size = 4
 learning_rate = 0.001
-num_epochs = 50
+num_epochs = 10
 
 transform = transforms.Compose([ transforms.ToTensor(), 
                                 transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
@@ -29,7 +29,7 @@ eg = iter(train_loader)
 samples, labels = eg.__next__()
 print(samples.shape, labels.shape)
 
-for i in range(5):
+for i in range(4):
     plt.subplot(2,3,i+1)
     plt.imshow(samples[i][0])
 
